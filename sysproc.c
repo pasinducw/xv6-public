@@ -57,6 +57,12 @@ sys_sbrk(void)
 }
 
 int
+sys_getmysize(void)
+{
+  return myproc()->sz;
+}
+
+int
 sys_sleep(void)
 {
   int n;
