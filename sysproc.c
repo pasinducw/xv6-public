@@ -85,6 +85,13 @@ sys_getsystemcalladdr(void){
   return &sys_fork;
 }
 
+int sys_setpriority(void){
+  int priority;
+  argint(0, &priority);
+  myproc()->priority = priority;
+  return priority;
+}
+
 int
 sys_sleep(void)
 {
