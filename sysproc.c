@@ -63,6 +63,29 @@ sys_getmysize(void)
 }
 
 int
+sys_getkernelstartaddr(void)
+{
+  return KERNBASE;
+}
+
+int
+sys_getkernelendaddr(void)
+{
+  return KERNBASE + PHYSTOP;
+}
+
+int
+sys_getkernelvariaddr(void){
+  int variable = 10;
+  return (int)(int *)&variable;
+}
+
+void * 
+sys_getsystemcalladdr(void){
+  return &sys_fork;
+}
+
+int
 sys_sleep(void)
 {
   int n;
